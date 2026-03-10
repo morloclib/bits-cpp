@@ -1,0 +1,4 @@
+module test-bits-cpp (test)
+
+import bits.test (test)
+import bits-cpp
