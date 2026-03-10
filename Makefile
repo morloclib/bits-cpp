@@ -1,6 +1,6 @@
 test:
-	morloc make test.loc
-	./test-bits-cpp test
+	morloc make -o test test.loc
+	./test
 
 clean:
-	rm -rf test-bits-cpp test-bits-cpp.manifest pool*
+	rm -rf test pools/
