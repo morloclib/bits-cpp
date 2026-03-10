@@ -3,133 +3,21 @@ module bits-cpp (*)
 import bits
 import root-cpp
 
-instance Bits Int where
-  source Cpp from "bits.hpp"
-    ( "morloc_and" as (.&.)
-    , "morloc_or" as (.|.)
-    , "morloc_xor" as (.^.)
-    , "morloc_shiftl" as (<<)
-    , "morloc_shiftr" as (>>)
-    , "morloc_bnot" as bnot
-    , "morloc_testBit" as testBit
-    , "morloc_setBit" as setBit
-    , "morloc_clearBit" as clearBit
-    , "morloc_flipBit" as flipBit
-    , "morloc_popcount" as popcount
-    )
-
-instance Bits Int8 where
-  source Cpp from "bits.hpp"
-    ( "morloc_and" as (.&.)
-    , "morloc_or" as (.|.)
-    , "morloc_xor" as (.^.)
-    , "morloc_shiftl" as (<<)
-    , "morloc_shiftr" as (>>)
-    , "morloc_bnot" as bnot
-    , "morloc_testBit" as testBit
-    , "morloc_setBit" as setBit
-    , "morloc_clearBit" as clearBit
-    , "morloc_flipBit" as flipBit
-    , "morloc_popcount" as popcount
-    )
-
-instance Bits Int16 where
-  source Cpp from "bits.hpp"
-    ( "morloc_and" as (.&.)
-    , "morloc_or" as (.|.)
-    , "morloc_xor" as (.^.)
-    , "morloc_shiftl" as (<<)
-    , "morloc_shiftr" as (>>)
-    , "morloc_bnot" as bnot
-    , "morloc_testBit" as testBit
-    , "morloc_setBit" as setBit
-    , "morloc_clearBit" as clearBit
-    , "morloc_flipBit" as flipBit
-    , "morloc_popcount" as popcount
-    )
-
-instance Bits Int32 where
-  source Cpp from "bits.hpp"
-    ( "morloc_and" as (.&.)
-    , "morloc_or" as (.|.)
-    , "morloc_xor" as (.^.)
-    , "morloc_shiftl" as (<<)
-    , "morloc_shiftr" as (>>)
-    , "morloc_bnot" as bnot
-    , "morloc_testBit" as testBit
-    , "morloc_setBit" as setBit
-    , "morloc_clearBit" as clearBit
-    , "morloc_flipBit" as flipBit
-    , "morloc_popcount" as popcount
-    )
-
-instance Bits Int64 where
-  source Cpp from "bits.hpp"
-    ( "morloc_and" as (.&.)
-    , "morloc_or" as (.|.)
-    , "morloc_xor" as (.^.)
-    , "morloc_shiftl" as (<<)
-    , "morloc_shiftr" as (>>)
-    , "morloc_bnot" as bnot
-    , "morloc_testBit" as testBit
-    , "morloc_setBit" as setBit
-    , "morloc_clearBit" as clearBit
-    , "morloc_flipBit" as flipBit
-    , "morloc_popcount" as popcount
-    )
-
-instance Bits UInt8 where
-  source Cpp from "bits.hpp"
-    ( "morloc_and" as (.&.)
-    , "morloc_or" as (.|.)
-    , "morloc_xor" as (.^.)
-    , "morloc_shiftl" as (<<)
-    , "morloc_shiftr" as (>>)
-    , "morloc_bnot" as bnot
-    , "morloc_testBit" as testBit
-    , "morloc_setBit" as setBit
-    , "morloc_clearBit" as clearBit
-    , "morloc_flipBit" as flipBit
-    , "morloc_popcount" as popcount
-    )
-
-instance Bits UInt16 where
-  source Cpp from "bits.hpp"
-    ( "morloc_and" as (.&.)
-    , "morloc_or" as (.|.)
-    , "morloc_xor" as (.^.)
-    , "morloc_shiftl" as (<<)
-    , "morloc_shiftr" as (>>)
-    , "morloc_bnot" as bnot
-    , "morloc_testBit" as testBit
-    , "morloc_setBit" as setBit
-    , "morloc_clearBit" as clearBit
-    , "morloc_flipBit" as flipBit
-    , "morloc_popcount" as popcount
-    )
-
-instance Bits UInt32 where
-  source Cpp from "bits.hpp"
-    ( "morloc_and" as (.&.)
-    , "morloc_or" as (.|.)
-    , "morloc_xor" as (.^.)
-    , "morloc_shiftl" as (<<)
-    , "morloc_shiftr" as (>>)
-    , "morloc_bnot" as bnot
-    , "morloc_testBit" as testBit
-    , "morloc_setBit" as setBit
-    , "morloc_clearBit" as clearBit
-    , "morloc_flipBit" as flipBit
-    , "morloc_popcount" as popcount
-    )
-
-instance Bits UInt64 where
-  source Cpp from "bits.hpp"
-    ( "morloc_and" as (.&.)
-    , "morloc_or" as (.|.)
-    , "morloc_xor" as (.^.)
-    , "morloc_shiftl" as (<<)
-    , "morloc_shiftr" as (>>)
+instance Bits Int
+       , Bits Int8
+       , Bits Int16
+       , Bits Int32
+       , Bits Int64
+       , Bits UInt8
+       , Bits UInt16
+       , Bits UInt32
+       , Bits UInt64 where
+  %inline source Cpp from "bits.hpp"
+    ( (&) as (.&.)
+    , (|) as (.|.)
+    , (^) as (.^.)
+    , (<<) as shiftl
+    , (>>) as shiftr
     , "morloc_bnot" as bnot
     , "morloc_testBit" as testBit
     , "morloc_setBit" as setBit

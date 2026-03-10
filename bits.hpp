@@ -4,31 +4,6 @@
 #include <cstdint>
 
 template <typename T>
-T morloc_and(T x, T y) {
-    return x & y;
-}
-
-template <typename T>
-T morloc_or(T x, T y) {
-    return x | y;
-}
-
-template <typename T>
-T morloc_xor(T x, T y) {
-    return x ^ y;
-}
-
-template <typename T>
-T morloc_shiftl(T x, int n) {
-    return x << n;
-}
-
-template <typename T>
-T morloc_shiftr(T x, int n) {
-    return x >> n;
-}
-
-template <typename T>
 T morloc_bnot(T x) {
     return ~x;
 }
