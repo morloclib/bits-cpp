@@ -4,14 +4,14 @@ import bits
 import root-cpp
 
 instance Bits Int
-       , Bits Int8
-       , Bits Int16
-       , Bits Int32
-       , Bits Int64
-       , Bits UInt8
-       , Bits UInt16
-       , Bits UInt32
-       , Bits UInt64 where
+       , Bits I8
+       , Bits I16
+       , Bits I32
+       , Bits I64
+       , Bits U8
+       , Bits U16
+       , Bits U32
+       , Bits U64 where
   %inline source Cpp from "bits.hpp"
     ( (&) as (.&.)
     , (|) as (.|.)
