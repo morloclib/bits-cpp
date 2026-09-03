@@ -14,7 +14,7 @@ instance Bits Int
        , Bits U64 where
   %inline source Cpp from "bits.hpp"
     ( (&) as (.&.)
-    , (|) as (.|.)
+    , `|` as (.|.)
     , (^) as (.^.)
     , (<<) as shiftl
     , (>>) as shiftr
